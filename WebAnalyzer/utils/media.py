@@ -3,6 +3,7 @@ from AnalysisModule import settings
 import os, datetime
 import subprocess
 import cv2
+from datetime import timedelta
 
 def get_directory():
     date_today = datetime.date.today()
@@ -105,14 +106,11 @@ def get_video_metadata(video_path):
             value = info[1]
             json_metadata[key] = value
     video_capture = cv2.VideoCapture(video_path)
-    json_metadata['extract_fps'] = video_capture.get(cv2.CAP_PROP_FPS)
+    json_metadata['fps'] = video_capture.get(cv2.CAP_PROP_FPS)
     video_capture.release()
 
     return json_metadata
 
 def frames_to_timecode (frames, fps):
-    h = int(frames / 86400)
-    m = int(frames / 1440) % 60
-    s = int((frames % 1440)/fps)
-    f = frames % 1440 % fps
-    return ( "%02d:%02d:%02d:%02d" % ( h, m, s, f))
+    td = timedelta(seconds=(frames / fps))
+    return str(td)

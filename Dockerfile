@@ -1,27 +1,25 @@
-FROM sogangmm/ubuntu:18.04-mysql-py3
+FROM sogangmm/cuda:9.1-cudnn7-devel-ubuntu16.04-py27-mysql
 
-RUN apt-get update \
-    && apt-get -y install python3 python3-pip python3-dev \
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get -y install python python-pip python-dev \
     git wget ssh vim \
-    apt-utils libgl1 ffmpeg\
+    apt-utils libgl1 libxrender1 libsm6 ffmpeg\
     && rm -rf /var/lib/apt/lists/*
-
-RUN pip3 install --upgrade pip
-RUN pip3 install setuptools
 
 WORKDIR /workspace
 ADD . .
-RUN pip3 install -r requirements.txt
+RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+RUN python get-pip.py --force-reinstall
+RUN pip install -r requirements.txt
 
 ENV DJANGO_SUPERUSER_USERNAME root
 ENV DJANGO_SUPERUSER_EMAIL none@none.com
 ENV DJANGO_SUPERUSER_PASSWORD password
 
-COPY docker-compose-env/sshd_config /etc/ssh/sshd_config
 COPY docker-entrypoint.sh /docker-entrypoint.sh
-RUN chmod +x /docker-entrypoint.sh
-ENTRYPOINT ["/docker-entrypoint.sh"]
+#RUN chmod +x /docker-entrypoint.sh
+#ENTRYPOINT ["/docker-entrypoint.sh"]
 
 RUN chmod -R a+w /workspace
 
-EXPOSE 8000
+EXPOSE 8000floydhub/pytorch:0.3.1-gpu.cuda9cudnn7-py2.31

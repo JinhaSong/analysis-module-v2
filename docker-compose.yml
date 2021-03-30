@@ -13,16 +13,14 @@ services:
       - rabbitmq
     env_file:
       - "docker-compose-env/main.env"
-      - "docker-compose-env/mysql.env"
       - "docker-compose-env/rabbitmq.env"
     expose:
       - "8000"
-      - "22"
     ports:
-      - "8001:8000"
-      - "8022:22"
+      - "8034:8000"
     stdin_open: true
     tty: true
+
   rabbitmq:
     image: rabbitmq:latest
     restart: always
