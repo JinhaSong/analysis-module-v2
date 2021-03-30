@@ -12,8 +12,9 @@ class Dummy:
     def __init__(self):
         # TODO
         #   - initialize and load model here
-        model_path = os.path.join(self.path, "model.txt")
-        self.model = open(model_path, "r")
+        # model_path = os.path.join(self.path, "model.txt")
+        # self.model = open(model_path, "r")
+        pass
 
     def inference_by_image(self, image_path):
         result = []
