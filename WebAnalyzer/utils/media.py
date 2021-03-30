@@ -111,8 +111,5 @@ def get_video_metadata(video_path):
     return json_metadata
 
 def frames_to_timecode (frames, fps):
-    h = int(frames / 86400)
-    m = int(frames / 1440) % 60
-    s = int((frames % 1440)/fps)
-    f = frames % 1440 % fps
-    return ( "%02d:%02d:%02d:%02d" % ( h, m, s, f))
+    td = timedelta(seconds=(frames / fps))
+    return str(td)
