@@ -33,5 +33,6 @@ router.register(r'audio', WebAnalyzer.views.AudioViewSet)
 
 urlpatterns = [
     url(r'^analyzer/', include(router.urls)),   # Backward Compatibility
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
