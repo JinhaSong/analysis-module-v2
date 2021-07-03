@@ -2,7 +2,7 @@
 set -e
 
 cd /workspace
-wget ftp://mldisk.sogang.ac.kr/hidf/places/places365/wideresnet18_places365.pth.tar -P /workspace/Modules/places/wideresnet18_places365.pth.tar
+wget ftp://mldisk.sogang.ac.kr/hidf/places/places365/wideresnet18_places365.pth.tar -P /workspace/Modules/places/
 service mysql restart
 sh run_migration.sh
 

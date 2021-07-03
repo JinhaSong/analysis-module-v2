@@ -1,4 +1,4 @@
-FROM sogangmm/ubuntu:18.04-mysql-py3
+FROM sogangmm/cuda:10.2-cudnn7-devel-ubuntu18.04-py36-mysql
 
 RUN apt-get update \
     && apt-get -y install python3 python3-pip python3-dev \
