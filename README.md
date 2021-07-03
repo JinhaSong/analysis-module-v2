@@ -240,7 +240,7 @@ Dummy class에는 input type에 따라 함수가 정의되어 있으며(inferenc
 
 ### Additional Settings
 
-실행 시에 필요한 다양한 Setting을 변경하고 싶다면 AnalysisModule 디렉토리의 config.py를 수정합니다.
+실행 시에 필요한 다양한 Setting을 변경하고 싶다면 AnalysisEngine 디렉토리의 config.py를 수정합니다.
 
 * 개발모드 해제하기
 ```python

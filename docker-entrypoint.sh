@@ -2,6 +2,9 @@
 set -e
 
 cd /workspace
+wget ftp://mldisk.sogang.ac.kr/hidf/food/yolov4.cfg -P /workspace/Modules/food/
+wget ftp://mldisk.sogang.ac.kr/hidf/food/yolov4.weights -P /workspace/Modules/food/
+wget ftp://mldisk.sogang.ac.kr/hidf/food/aihub-food/efficient.pt -P /workspace/Modules/food/
 service mysql restart
 sh run_migration.sh
 python3 -c "import os

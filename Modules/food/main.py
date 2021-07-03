@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
-from AnalysisModule import settings
+from AnalysisEngine import settings
 from Modules.food.darknet import Darknet, post_processing
 from Modules.food.efficientnet import EfficientNet
 from Modules.dummy.main import Dummy
