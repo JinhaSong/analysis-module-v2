@@ -5,7 +5,7 @@ cd /workspace
 service mysql restart
 sh run_migration.sh
 python3 -c "import os
-os.environ['DJANGO_SETTINGS_MODULE'] = 'AnalysisModule.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'AnalysisEngine.settings'
 import django
 django.setup()
 from django.contrib.auth.management.commands.createsuperuser import get_user_model

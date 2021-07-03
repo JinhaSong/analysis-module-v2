@@ -2,11 +2,11 @@
 import os
 from celery import Celery
 from celery.schedules import crontab
-from AnalysisModule import config
+from AnalysisEngine import config
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AnalysisModule.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AnalysisEngine.settings')
 
-app = Celery('AnalysisModule')
+app = Celery('AnalysisEngine')
 
 
 if 'RABBITMQ_DEFAULT_USER' in os.environ:

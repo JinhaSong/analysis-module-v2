@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from AnalysisModule.config import DEBUG
-from AnalysisModule.celerys import app
+from AnalysisEngine.config import DEBUG
+from AnalysisEngine.celerys import app
 from celery.signals import worker_init, worker_process_init
 from billiard import current_process
 

@@ -1,6 +1,6 @@
 import os
 
-from AnalysisModule import settings
+from AnalysisEngine import settings
 from Modules.dummy.example import test
 from WebAnalyzer.utils.media import frames_to_timecode
 

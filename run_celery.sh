@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-celery -A AnalysisModule worker -B -l info
+celery -A AnalysisEngine worker -B -l info
