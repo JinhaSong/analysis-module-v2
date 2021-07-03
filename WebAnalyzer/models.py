@@ -11,7 +11,7 @@ from AnalysisEngine.config import DEBUG
 from WebAnalyzer.tasks import analyzer_by_image, analyzer_by_video
 from WebAnalyzer.utils import filename
 from WebAnalyzer.utils.media import *
-from django_mysql.models import JSONField
+from django.db.models import JSONField
 import ast
 
 
