@@ -2,9 +2,9 @@
 set -e
 
 cd /workspace
+wget ftp://mldisk.sogang.ac.kr/hidf/places/places365/wideresnet18_places365.pth.tar -P /workspace/Modules/places/wideresnet18_places365.pth.tar
 service mysql restart
 sh run_migration.sh
-wget ftp://mldisk.sogang.ac.kr/hidf/places/places365/wideresnet18_places365.pth.tar -P /workspace/Modules/places/wideresnet18_places365.pth.tar
 
 python3 -c "import os
 os.environ['DJANGO_SETTINGS_MODULE'] = 'AnalysisEngine.settings'
