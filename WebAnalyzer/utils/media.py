@@ -1,4 +1,4 @@
-from AnalysisModule import settings
+from AnalysisEngine import settings
 
 import os, datetime
 import subprocess

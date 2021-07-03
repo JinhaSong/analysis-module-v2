@@ -6,8 +6,8 @@ from django.db import models
 
 from rest_framework import exceptions
 
-from AnalysisModule import settings
-from AnalysisModule.config import DEBUG
+from AnalysisEngine import settings
+from AnalysisEngine.config import DEBUG
 from WebAnalyzer.tasks import analyzer_by_image, analyzer_by_video
 from WebAnalyzer.utils import filename
 from WebAnalyzer.utils.media import *

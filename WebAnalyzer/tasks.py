@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from AnalysisModule.config import DEBUG
-from AnalysisModule.celerys import app
+from AnalysisEngine.config import DEBUG
+from AnalysisEngine.celerys import app
 from celery.signals import worker_init, worker_process_init
 from billiard import current_process
 
@@ -26,8 +26,8 @@ def module_load_init(**__):
     #   - Add your model
     #   - You can use worker_index if you need to get and set gpu_id
     #       - ex) gpu_id = worker_index % TOTAL_GPU_NUMBER
-    from Modules.dummy.main import Dummy
-    analyzer = Dummy()
+    from Modules.places.main import Places365
+    analyzer = Places365()
 
 
 @app.task
